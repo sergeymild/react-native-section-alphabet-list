@@ -2,7 +2,7 @@ import * as React from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { ListLetterIndexProps } from "./types"
 import { styles } from "./styles";
-import { ISectionData } from "../AlphabetList/types";
+import {IData, ISectionData} from '../AlphabetList/types'
 
 export const ListLetterIndex: React.FC<ListLetterIndexProps> = ({
   sectionData,
@@ -12,7 +12,7 @@ export const ListLetterIndex: React.FC<ListLetterIndexProps> = ({
   renderCustomIndexLetter,
   letterIndexContainer
 }) => {
-  const onRenderCustomIndexLetter = ({ item, index }: { item: ISectionData, index: number }) => {
+  const onRenderCustomIndexLetter = ({ item, index }: { item: ISectionData<IData>, index: number }) => {
     const onPress = () => onPressLetter(index)
 
     if (renderCustomIndexLetter) {

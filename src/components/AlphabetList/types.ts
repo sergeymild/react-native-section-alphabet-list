@@ -5,26 +5,26 @@ export interface IData {
   key: string;
 }
 
-export interface ISectionData {
+export interface ISectionData<ItemT> {
   title: string;
-  data: IData[];
+  data: ItemT[];
   index?: number;
 }
-export interface IIndexLetterProps {
-  item: ISectionData,
+export interface IIndexLetterProps<ItemT> {
+  item: ISectionData<ItemT>,
   index: number,
   onPress: () => void;
 }
 
-export interface AlphabetListProps extends Partial<SectionListProps<IData>> {
-  data: IData[];
+export interface AlphabetListProps<Item> extends Partial<SectionListProps<Item>> {
+  data: Item[];
   index?: string[],
   style?: ViewStyle;
   indexLetterStyle?: TextStyle,
   indexLetterContainerStyle?: ViewStyle,
   letterIndexContainer?: ViewStyle,
-  renderCustomItem?: (item: IData) => JSX.Element;
-  renderCustomSectionHeader?: (section: SectionListData<IData>) => JSX.Element;
+  renderCustomItem?: (item: Item) => JSX.Element;
+  renderCustomSectionHeader?: (section: SectionListData<Item>) => JSX.Element;
   renderCustomListHeader?: () => JSX.Element;
   renderCustomIndexLetter?: ({ item, index, onPress }: IIndexLetterProps) => JSX.Element;
   getItemHeight?: (sectionIndex: number, rowIndex: number) => number;
