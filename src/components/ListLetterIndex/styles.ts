@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   letterIndexList: {
     alignItems: "center",
     justifyContent: "center",
-    height: "100%",
+    minHeight: "100%",
   },
 
   letterIndexItem: {
