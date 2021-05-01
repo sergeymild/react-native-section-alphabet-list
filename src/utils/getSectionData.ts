@@ -51,14 +51,8 @@ const getAlphabetEntrySet = (data: IData[], validLettersMap: ILetterMap) => {
 };
 
 const getItemFirstLetter = (value: string, validLettersMap: ILetterMap) => {
-  const firstChar = value.substring(0, 1)
-  const isValidLetter = validLettersMap[firstChar.toLowerCase()]
-
-  if (isValidLetter) {
-    return firstChar.toUpperCase()
-  }
-
-  return "#"
+  const firstChar = value[0]
+  return firstChar.toLowerCase()
 };
 
 const formatEntry = (entry: [string, any[]]) => {
